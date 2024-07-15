@@ -1,0 +1,262 @@
+body{
+    background-color: white;
+    /* background-image: url(/static/FP/background.png);
+    background-repeat: no-repeat;
+    background-size: auto 100%; */
+}
+
+.background {
+    width: 1519.2px;
+    /* height: auto; */
+    opacity: 0.60; 
+    object-fit: cover;
+}
+
+.body {
+    margin: 0 10%;
+}
+
+.buttons1 {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.chkbox {
+    display: block;
+    border:1px solid #01B9C5;
+    display: flex;
+    max-width: 250px;
+    border-radius: 6px;
+    overflow: hidden;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
+    margin: 5px;
+}
+
+.chkbox label span{
+    display: block;
+    flex-grow: 1;
+    text-align: center;
+    height: 100%;
+    padding: 5px 10px;
+    font-size: 18px;
+    color: black;
+}
+
+.chkbox label input{
+    position: absolute;
+    display: none;
+    color: #fff !important;
+}
+
+.chkbox:hover span{
+    background-color:#01B9C5;
+    color:white;
+    cursor: pointer;
+}
+
+.chkbox input:checked + span{
+    background-color:#01B9C5;
+    color:white;
+}
+
+
+.hidden{
+    display: none;
+}
+
+.img-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 100%;
+    height: 700px;
+  }
+
+
+#input-box{
+    flex:1;
+    height: 30px;
+    background: transparent;
+    border:0;
+    outline: 0;
+    font-size: 18px;
+    width: 100%;
+}
+
+.ppimgs{
+    position: relative;
+    color: white;
+    text-align: center;
+    height: 220px;
+    width: 350px;
+    margin:7%;
+    border-radius: 20px;
+}
+
+.ppimg {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    object-fit: cover;
+    opacity: 0.75;
+    border-radius: 20px;
+}
+
+.ppimgs div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+
+}
+#use_info .ppimgs {
+    background-color: rgb(207, 166, 90);
+    margin: 0 2.5rem 0 0;
+    display: grid;
+    place-items: center;
+}
+
+.result-box ul{
+    text-align: left;
+    border-top: 1px solid #999;
+    padding: 10px 10px;
+    color: black;
+}
+.result-box ul li{
+    list-style: none;
+    border-radius: 3px;
+    padding: 10px 5px;
+    cursor: pointer;
+    
+}
+.result-box ul li:hover{
+    background: #e9f3ff;
+
+}
+
+.search-box{
+    width: 400px;
+    background: #fff;
+    margin: 200px auto 0;
+    border-radius: 5px;
+}
+
+.search-box .rows{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+
+.step.active {
+    opacity: 1;
+}
+
+.step.finish {
+    background-color: #04AA6D;
+}
+
+.tab {
+    display: none;
+  }
+
+.tag{
+    margin: 4px;
+    border-radius: 5px;
+    border: 1px solid white;
+    overflow: hidden;
+}
+
+/* useful information pages */
+.ui_header{
+    height:380px;
+    display: grid;
+    place-items: center;
+    background-color: #7be6ed;
+    color: white;
+}
+
+.ui_body{
+    margin: 2rem 0 0 10rem;
+    font-family: "Lato", sans-serif;
+    line-height: 2.5;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.ui_cont{
+    padding-left: 10px;
+    width: 65%;
+}
+
+/* carousel for popular places */
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+
+}
+
+.col-4 {
+    width: 22.5rem;
+}
+.carousel-inner .carousel-item{
+    transition: 500ms ease-in-out left;
+    transition: 500ms ease-in-out all;
+    backface-visibility: visible;
+    transform: none!important;
+}
+.carousel-inner .carousel-item-end.active,
+.carousel-inner .carousel-item-next {
+    transform: translateX(33%);
+}
+
+.carousel-inner .carousel-item-start.active, 
+.carousel-inner .carousel-item-prev {
+    transform: translateX(-33%);
+}
+
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start { 
+    transform: translateX(0);
+}
+
+.carousel-control-next-icon {
+    right: 0;
+    position: absolute;
+}
+
+.carousel-control-prev-icon{
+    left:0;
+    position: absolute;
+}
+
+.carousel-control.left,.carousel-control.right {background-image:none;}
+
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(100%);
+}

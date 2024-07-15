@@ -1,0 +1,122 @@
+{% extends "FP/layout.html" %}
+
+{% block body %}
+<div class="img-container">
+    <img class="background" src="../../static/FP/background.png" alt="">
+    <div class="centered container">
+        <h1>MALAYSIA</h1>
+        <form action="" method="post" class="centered">
+            {% csrf_token %}
+            <div class="search-box">
+                <div class="rows">
+                    <input autocomplete="off"  id="input-box" placeholder="Where do you want to go?">
+                </div>
+                <div class="result-box">
+                </div>
+            </div>
+            <div class="buttons1">
+                <div>
+                    <button type="submit">I don't know</button>
+                </div>
+                <div>
+                    <button type="submit">GO!</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="body my-3">
+    <h2>POPULAR PLACES</h2>
+    <!-- <div class="row mx-auto my-auto justify-content-center"> -->
+        <!-- <div class="col-md-12"> -->
+            <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <!-- <div class="row " style="flex-wrap: wrap; "> -->
+                        <div class="carousel-item active">
+                            <div class="col-4">
+                                <div class="ppimgs img-fluid">
+                                    <img  class="ppimg" src="..\..\static\FP\gbj5ov7ypd0pr49npnnj.jpg" alt="Sabah">
+                                    <div>Sabah</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-4">
+                                <div class="ppimgs img-fluid">
+                                    <img class="ppimg" src="..\..\static\FP\Langkawi-Sky-Bridge-things-to-do-in-Langkawi-Malaysia.jpg" alt="Langkawi">
+                                    <div>Langkawi</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-4">
+                                <div class="ppimgs img-fluid">
+                                    <img class="ppimg" src="..\..\static\FP\penang.jpg" alt="Penang">
+                                    <div>Penang</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="carousel-item">
+                            <div class="col-4">
+                                <div class="ppimgs img-fluid">
+                                    <img class="ppimg" src="..\..\static\FP\penang.jpg" alt="Penang">
+                                    <div>Penang</div>
+                                </div>
+                            </div>
+                        </div> -->
+                    <!-- </div> -->
+                </div>
+                <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <!-- <span class="sr-only">Previous</span> -->
+                </a>
+                <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <!-- <span class="sr-only">Next</span> -->
+                </a>
+            </div>
+        <!-- </div>  -->
+    <!-- </div> -->
+    <div class="container">
+        <h2>USEFUL INFORMATION</h2>
+        <div class="">
+            <div class="d-flex col-12" id="use_info">
+                <div class="col ppimgs">What to wear?</div>
+                <div class="col ppimgs">How to get around?</div>
+                <div class="col ppimgs">Cash or card</div>
+                <div class="col ppimgs" ><a href="{% url 'language' %}">Language</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <!-- {% if start %}
+        {{ start }}
+        {% else %}
+        <form  action="/" method="post">
+            {% csrf_token %}
+            From:
+            
+            <select id="from" name="from">
+                {% for place in places %}
+                <option value="{{ place.name }}">
+                    {{ place.name }}
+                </option>
+                {% endfor %}
+            </select>
+            
+            To:
+            <select id="to" name="to">
+                {% for place in places %}
+                <option>
+                    {{ place.name }}
+                </option>
+                {% endfor %}
+            </select>
+            <button type="submit" id="duration">Enter</button>
+        </form>
+        {% endif %} -->
+
+{% endblock %}

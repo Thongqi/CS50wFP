@@ -1,0 +1,70 @@
+{% extends "FP/layout.html" %}
+
+{% block body %}
+<div class="centered">
+    
+    <form action="" method="post" name="m-step" id="m-step">
+        {% csrf_token %}
+        <div class="tab">
+            <h2 style="font-family: Brush Script MT, Brush Script Std, cursive; text-align: center;">What do you prefer?</h2>
+            
+            <div class="d-flex flex-wrap">
+                {% for tag in tags %}
+                <div class="chkbox">
+                    <label>
+                        <input type="checkbox" value="{{tag}}" name="chk[]"  class="hidden" autocomplete="off">
+                        <span>{{tag}}</span>
+                    </label>
+                </div>
+                {% endfor %}
+            </div>
+            
+        </div>
+
+        <div class="tab">
+            <h2 style="font-family: Brush Script MT, Brush Script Std, cursive; text-align: center;">How many days you planned to spend?</h2>
+            <input type="text"></input>
+            <div class="row"> 
+                <span>Recommended:</span>
+                <button class="btn">3D2N</button>
+                <button class="btn">4D2N</button>
+            </div>
+        </div>
+
+        <div class="tab">
+            <h2 style="font-family: Brush Script MT, Brush Script Std, cursive; text-align: center;">What is your budget range (per person)?</h2>
+            <div class="d-flex flex-wrap">
+                <div class="chkbox">
+                    <label>
+                        <input type="radio" value="{{tag}}" name="chk[]"  class="hidden" autocomplete="off">
+                        <span>1000-1500</span>
+                    </label>
+                </div>
+                <div class="chkbox">
+                    <label>
+                        <input type="radio" value="{{tag}}" name="chk[]"  class="hidden" autocomplete="off">
+                        <span>1500-2000</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- progress button -->
+        <div style="overflow:auto;">
+            <div style="float:right;">
+            <button type="button" id="prevBtn" class="btn" onclick="nextPrev(-1)">Previous</button>
+            <button type="button" id="nextBtn" class="btn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </div>
+
+        
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

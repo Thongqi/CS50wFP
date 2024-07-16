@@ -11,11 +11,13 @@
 </div>
 
 <div class="ui_footer">
-    <div >
-        <div class="col ppimgs" style="display:none;"><a href="{% url 'what-to-wear' %}">What to wear?</a></div>
-        <div class="col ppimgs" style="display:none;"><a href="{% url 'transport' %}">How to get around?</a></div>
-        <div class="col ppimgs" style="display:none;"><a href="{% url 'cash_or_card' %}">Cash or card</a></div>
-        <div class="col ppimgs" style="display:none;"><a href="{% url 'language' %}">Language</a></div>
+    <h3>You might also be interested in...</h3>
+    <div>
+        <div class="col ppimgs" style="display:none;" id="what-to-wear"><a href="{% url 'what-to-wear' %}">What to wear?</a></div>
+        <div class="col ppimgs" style="display:none;" id="transport"><a href="{% url 'transport' %}">How to get around?</a></div>
+        <div class="col ppimgs" style="display:none;" id="cash-or-card"><a href="{% url 'cash_or_card' %}">Cash or card</a></div>
+        <div class="col ppimgs" style="display:none;" id="language"><a href="{% url 'language' %}">Language</a></div>
+        <div class="col ppimgs" style="display:none;" id="tips"><a href="{% url 'tips' %}">Do I need to tip?</a></div>
     </div>
 </div>
 

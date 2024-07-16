@@ -211,6 +211,16 @@ body{
     width: 65%;
 }
 
+.ui_footer > div{
+    display:flex;
+}
+
+.ui_footer > div > div {
+    width: 300px;
+    height:195px;
+    
+}
+
 /* carousel for popular places */
 .carousel-inner .carousel-item.active,
 .carousel-inner .carousel-item-next,

@@ -139,9 +139,33 @@ $(document).ready(function(){
           });
     }
     
+    if ('.ui_cont'){
+        var thisPage = $(this).attr('id')
+        var usefulInfo = ["language", "transport", "tips", "what-to-wear", "cash-or-card"]
+        $(usefulInfo).remove(thisPage)
+        console.log(usefulInfo)
+        var random = getUnique(usefulInfo, 3)
 
+        $(random).each(function(){
+            $('.${this}').css("display","block")
+        })
+    
+    }
     
 })
+function getUnique(arrayNum, count) {
+  // Make a copy of the array
+  var tmp = arrayNum.slice(arrayNum);
+  var ret = [];
+  
+  for (var i = 0; i < count; i++) {
+    var index = Math.floor(Math.random() * tmp.length);
+    var removed = tmp.splice(index, 1);
+    // Since we are only removing one element
+    ret.push(removed[0]);
+  }
+  return ret;  
+}
 
 function showTab(n){
     var x = $(".tab")

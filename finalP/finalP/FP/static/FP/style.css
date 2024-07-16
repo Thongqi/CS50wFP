@@ -260,3 +260,14 @@ body{
 .carousel-control-prev /*, .carousel-indicators */ {
     filter: invert(100%);
 }
+
+#trn::before{
+ 	border-radius: 5rem;
+    border: 1px solid;
+    background-color:white;
+    content: ".";
+    width:1rem;
+    height:1rem;
+    margin-left:-1rem;
+    margin-right:1rem;
+ }

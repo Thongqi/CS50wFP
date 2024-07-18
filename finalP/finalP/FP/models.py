@@ -50,6 +50,7 @@ class Places(models.Model):
         ("Animal", "Animal"),
         ("Relax", "Relax"),
         ("History", "History"),
+        ("Food", "Food"),
     )
     tags = MultiSelectField(choices = OPTIONS, max_length=200)
     must = models.BooleanField()
@@ -62,8 +63,9 @@ class Places(models.Model):
         ("FRI", "Friday"),
         ("SAT", "Saturday"),
         ("SUN", "Sunday"),
+        ("ALL", "Everyday"),
     )
-    non_operating = MultiSelectField(choices = DAYS, max_length=100, blank = True)
+    operating = MultiSelectField(choices = DAYS, max_length=100, blank = True)
     state = models.ForeignKey(States, on_delete=models.CASCADE)
 
     def __str__(self):

@@ -23,11 +23,11 @@
 
         <div class="tab">
             <h2 style="font-family: Brush Script MT, Brush Script Std, cursive; text-align: center;">How many days you planned to spend?</h2>
-            <input type="text"></input>
+            <input id="select_days" name="select_days" type="text"></input>
             <div class="row"> 
                 <span>Recommended:</span>
-                <button class="btn">3D2N</button>
-                <button class="btn">4D2N</button>
+                <button type="button" class="btn select_days">3D2N</button>
+                <button type="button" class="btn select_days">4D3N</button>
             </div>
         </div>
 
@@ -36,13 +36,13 @@
             <div class="d-flex flex-wrap">
                 <div class="chkbox">
                     <label>
-                        <input type="radio" value="{{tag}}" name="chk[]"  class="hidden" autocomplete="off">
+                        <input type="radio" value="1000-1500" name="budget" class="hidden" autocomplete="off">
                         <span>1000-1500</span>
                     </label>
                 </div>
                 <div class="chkbox">
                     <label>
-                        <input type="radio" value="{{tag}}" name="chk[]"  class="hidden" autocomplete="off">
+                        <input type="radio" value="1500-2000" name="budget" class="hidden" autocomplete="off">
                         <span>1500-2000</span>
                     </label>
                 </div>

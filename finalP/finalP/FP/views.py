@@ -38,10 +38,17 @@ def places(request):
 
 def qa(request):
     if request.method == 'POST':
-         tag = request.POST.getlist('chk[]',"")
-         
-         return render(request, "FP/qa.html", {
-            "tags":tag,
+        tag = request.POST.getlist('chk[]',"")
+        days = request.POST.get('select_days')
+        budget = request.POST.get('budget')
+
+        places = list(Places.objects.values("name"))
+
+        return render(request, "FP/itinerary.html", {
+        "tag":tag,
+        "days": days,
+        "budget": budget,
+        "places": places,
         })
     else:
         tags = [c[0] for c in Places.OPTIONS]
@@ -64,5 +71,7 @@ def qa(request):
 #             "start": start,
 #         })
 
-def ui (request):
-    return render(request, "FP/what-to-wear.html")
+def itinerary (request):
+    
+    return render(request, "FP/itinerary.html")
+

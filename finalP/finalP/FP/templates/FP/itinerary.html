@@ -1,47 +1,55 @@
 {% extends "FP/layout.html" %}
 
 {% block body %}
-<div class="row">
-  <div class="col-4">
-    <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
-      <nav class="nav nav-pills flex-column">
-        <a class="nav-link" href="#day-1">Day 1</a>
+<div class="itinerary">
+
+
+  <div class="row">
+
+      <nav id="navbar-example3" class="col-sm-3 navbar navbar-light bg-light">
         <nav class="nav nav-pills flex-column">
-          <a class="nav-link ms-3 my-1" href="#day-1-1">Day 1-1</a>
-          <a class="nav-link ms-3 my-1" href="#day-1-2">Day 1-2</a>
-        </nav>
-        <a class="nav-link" href="#day-2">Day 2</a>
-        <a class="nav-link" href="#item-3">Item 3</a>
-        <nav class="nav nav-pills flex-column">
-          <a class="nav-link ms-3 my-1" href="#item-3-1">Item 3-1</a>
-          <a class="nav-link ms-3 my-1" href="#item-3-2">Item 3-2</a>
+          <a class="nav-link" href="#day-1">Item 1</a>
+          <nav class="nav nav-pills flex-column">
+            <a class="nav-link ml-3 my-1" href="#day-1-1">Item 1-1</a>
+            <a class="nav-link ml-3 my-1" href="#item-1-2">Item 1-2</a>
+          </nav>
+          <a class="nav-link" href="#item-2">Item2</a>
+          <a class="nav-link" href="#item-3">Item3</a>
+          <nav class="nav nav-pills flex-column">
+            <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>
+            <a class="nav-link ml-3 my-1" href="#item-3-2">Item 3-2</a>
+          </nav>
         </nav>
       </nav>
-    </nav>
-  </div>
-	
-<div>
-<h2>Here’s the itinerary designated for you~ </h2>
-</div>
+    
 
-<div class="col-8" style="padding:0; margin:0; gap:0;">
-	<div style="border-radius:2.5rem; border:1px solid; text-align:center; width:5rem;">Start</div>
-	<div style="padding-left:3rem;">
-		<div style="margin-left:auto; margin-right:auto; max-width:103rem; border-left: 1px solid; position:relative; padding-left: 3rem; padding-bottom:1rem;">
-			<h4 style="margin:0" id="day-1">Day 1</h4>
-			<div style="border-top: 1px solid;display:flex; padding-top:0.5rem;">
-				<div style="width:100rem;border:1px solid;">h</div>
-				<div style="margin:0 0 0 0.5rem;">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-				</div>
-			</div>
-		</div>
-	</div>
-	<div style="background-color:#F2F1F8;width:100%; padding-left: 3rem">
-	        <div style="margin-left:auto; margin-right:auto; max-width:103rem; border-left: 1px solid; position:relative; padding-left: 0.5rem; padding-bottom:1rem; position:relative; align-items:center; display:flex;"  id="trn">
-	        yo
-	        </div>
-	</div>
+    <div data-spy="scroll" data-target="#navbar-example3" data-offset="0" class="col-sm-9" style="padding:0; margin:0; gap:0;">
+      <div>
+        <h2>Here’s the itinerary designated for you~ </h2>
+      </div>
+      <div style="border-radius:2.5rem; border:1px solid; text-align:center; width:5rem;">Start</div>
+      <div style="padding-left:3rem;">
+        <div style="margin-left:auto; margin-right:auto; max-width:103rem; border-left: 1px solid; position:relative; padding-left: 3rem; padding-bottom:1rem;">
+          <h4 style="margin:0" id="day-1">Day 1</h4>
+          <div style="border-top: 1px solid;display:flex; padding-top:0.5rem;" id="day-1-1">
+            <div style="width:100rem;border:1px solid;">h</div>
+            <div style="margin:0 0 0 0.5rem;">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="background-color:#F2F1F8;width:100%; padding-left: 3rem">
+              <div style="margin-left:auto; margin-right:auto; max-width:103rem; border-left: 1px solid; position:relative; padding-left: 0.5rem; padding-bottom:1rem; position:relative; align-items:center; display:flex;"  id="trn">
+              yo
+              </div>
+      </div>
+    </div>
+  </div>
 </div>
+{{ tag }}
+{{ budget }}
+{{ days }}
+{{ places }}
 
 {% endblock %}

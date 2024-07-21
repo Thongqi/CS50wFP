@@ -1,3 +1,7 @@
+a{
+    text-decoration: none;
+}
+
 body{
     background-color: white;
     /* background-image: url(/static/FP/background.png);
@@ -93,6 +97,9 @@ body{
     width: 100%;
 }
 
+.itinerary {
+    margin:5rem;
+}
 .ppimgs{
     position: relative;
     color: white;
@@ -211,8 +218,12 @@ body{
     width: 65%;
 }
 
+.ui_footer {
+    margin: 5rem auto auto 5rem;
+}
 .ui_footer > div{
     display:flex;
+    
 }
 
 .ui_footer > div > div {

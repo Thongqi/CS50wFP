@@ -10,12 +10,22 @@ $(document).ready(function(){
         console.log("yes")
         var currentTab = 0
         showTab(currentTab)
+
+        $('.select_days').click(function(){
+            var inner = $(this).html()
+            console.log(inner)
+            $('#select_days').val(inner)
+        })
+        
     }
+
 
     $(".btn-primary").click(function(){
         $(this).toggleClass("btn-selected")
     })
     
+    
+
     $("#from").change(function(){
         var text = $("#from").val()
         console.log(text)
@@ -139,15 +149,16 @@ $(document).ready(function(){
           });
     }
     
+    // for further information, show other page that is not this page
     if ('.ui_cont'){
-        var thisPage = $(this).attr('id')
+        var thisPage = $('.ui_cont').attr('id')
         var usefulInfo = ["language", "transport", "tips", "what-to-wear", "cash-or-card"]
-        $(usefulInfo).remove(thisPage)
-        console.log(usefulInfo)
+        var usefulInfo = usefulInfo.filter(e=>e !== thisPage)
+       
         var random = getUnique(usefulInfo, 3)
-
+        
         $(random).each(function(){
-            $('.${this}').css("display","block")
+            $(`#${this}`).css("display","block")
         })
     
     }
@@ -172,6 +183,8 @@ function showTab(n){
     console.log(n)
     console.log(x.length)
     $(x[n]).show()
+
+
 
     if (n == 0){
         $("#prevBtn").hide()
@@ -213,8 +226,30 @@ function nextPrev(n){
 
 function validateForm(){
     var x, y, i, valid = true
-    x = $(".tab")
-    valid = true
+    x = $('input[name="chk[]"]:checked').length > 0;
+    y = $('#select_days').val();
+
+    var n = $(".tab")
+
+    var target = $('.tab:visible')
+   
+
+    var currentTab = $(n).index(target)
+    console.log(currentTab)
+
+    if (currentTab == '0'){
+        if (!x){
+            valid = false;
+            alert('Select at least one')
+        }
+    }
+    if (currentTab == '1'){
+          if (!y){
+        valid = false;
+        alert('Select at least one')
+    }
+    }
+  
     return valid
 }
 

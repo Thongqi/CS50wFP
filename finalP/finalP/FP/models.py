@@ -53,7 +53,7 @@ class Places(models.Model):
         ("Food", "Food"),
     )
     tags = MultiSelectField(choices = OPTIONS, max_length=200)
-    must = models.BooleanField()
+    must = models.BooleanField(null=True)
 
     DAYS = (
         ("MON", "Monday"),
@@ -66,7 +66,8 @@ class Places(models.Model):
         ("ALL", "Everyday"),
     )
     operating = MultiSelectField(choices = DAYS, max_length=100, blank = True)
-    state = models.ForeignKey(States, on_delete=models.CASCADE)
+    state = models.ForeignKey(States, on_delete=models.CASCADE, null=True)
+    remarks = models.TextField(null=True)
 
     def __str__(self):
         return self.name

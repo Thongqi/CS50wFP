@@ -44,7 +44,7 @@ def qa(request):
 
         places = list(Places.objects.values("name"))
   
-        # DAY 1-2
+        # DAY 1 & 2
         if 'Outdoor' in tag or 'Nature' in tag:
             day_1_2 = 'Telaga 7 Waterfall'
         else:
@@ -60,22 +60,31 @@ def qa(request):
                 day_3_2 =  'Temurun Waterfall'
             elif 'Animal' in tag:
                 day_3_2 =  'Crocodile Adventure Land'
-            
+            else:
+                day_3_2 = None
             day_3_1 = None
             day_4_2 = None
+            
+        # 4D3N
         else:
-            if day_1_2 != 'Crocodile Adventure Land':
-                day_4_2 = 'Temurun Waterfall'
-                day_3_2 = None
-            elif 'Animal' in tag:
-                day_3_2 =  'Crocodile Adventure Land'
-            else:
-                day_3_2 = None
-                day_4_2 = None
             if 'Animal' in tag:
                 day_3_1 = 'Langkawi Wildlifre Park'
+            elif 'Outdoor' in tag or 'Nature' in tag:
+                day_3_1 = 'Temurun Waterfall'
             else:
                 day_3_1 = 'Kilim Geoforest Park'
+                
+            if 'Outdoor' in tag or 'Nature' in tag:
+                day_3_2 = 'Kilim Geoforest Park'
+            elif 'Adventure' in tag or 'Sporty' in tag:
+                day_3_2 = 'SKYTREX Adventure'
+            else:
+                if day_3_1 == 'Kilim Geoforest Park':
+                    day_3_2 = None
+                else:
+                    day_3_2 = 'Kilim Geoforest Park'
+                day_4_2 = None
+            
 
         return render(request, "FP/itinerary.html", {
             "tag":tag,

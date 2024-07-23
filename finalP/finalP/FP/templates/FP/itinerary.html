@@ -11,7 +11,9 @@
           <a class="nav-link" href="#day-1">Day 1</a>
           <nav class="nav nav-pills flex-column">
             <a class="nav-link ml-3 my-1" href="#day-1-1">Day 1-1</a>
+            {% if transport == 'Flight' %}
             <a class="nav-link ml-3 my-1" href="#day-1-2">Day 1-2</a>
+            {% endif %}
             <a class="nav-link ml-3 my-1" href="#day-1-3">Day 1-3</a>
           </nav>
           <a class="nav-link" href="#day-2">Day 2</a>

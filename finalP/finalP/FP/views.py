@@ -40,16 +40,22 @@ def qa(request):
     if request.method == 'POST':
         tag = request.POST.getlist('chk[]')
         days = request.POST.get('select_days')
-        budget = request.POST.get('budget')
+        transport = request.POST.get('transport')
 
         places = list(Places.objects.values("name"))
   
-        # DAY 1 & 2
-        if 'Outdoor' in tag or 'Nature' in tag:
-            day_1_2 = 'Telaga 7 Waterfall'
+        # If flight or ferry
+        if transport == 'Flight':
+            # If Flight
+            if 'Outdoor' in tag or 'Nature' in tag:
+                day_1_2 = 'Telaga 7 Waterfall'
+            else:
+                day_1_2 = 'Crocodile Adventure Land'
         else:
-            day_1_2 = 'Crocodile Adventure Land'
-
+            # If Ferry
+            day_1_2 = None
+        
+        # Day 2
         if 'History' in tag or 'Culture' in tag:
             day_2_2 = 'Kota Mahsuri'
         else:

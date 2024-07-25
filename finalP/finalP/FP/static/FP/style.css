@@ -133,8 +133,11 @@ body{
     display:flex;
 }
 .iti_pic {
-    width:100rem;
-    border:1px solid;
+    flex-basis: 360px;
+    border: 1px solid;
+    height: 280px;
+    flex-grow: 0;
+    flex-shrink: 0
 }
 
 .ppimgs{
@@ -319,13 +322,13 @@ body{
     filter: invert(100%);
 }
 
-#trn::before{
- 	border-radius: 5rem;
+/* #trn::before{
+ 	border-radius: 50%;
     border: 1px solid;
     background-color:white;
-    content: ".";
-    width:1rem;
-    height:1rem;
+    content: "  ";
+    width:25px;
+    height:25px;
     margin-left:-1rem;
     margin-right:1rem;
- }
+ } */

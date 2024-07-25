@@ -58,8 +58,11 @@ def qa(request):
         # Day 2
         if 'History' in tag or 'Culture' in tag:
             day_2_2 = 'Kota Mahsuri'
+            x=Places.objects.get(name='Telaga 7 Waterfall')
+            day_2_2_cont = x.remarks
+
         else:
-            day_2_2 = 'Underwater World Langkawi'
+            day_2_2 = None
 
         if days == '3D2N':
             if day_1_2 != 'Crocodile Adventure Land':
@@ -73,6 +76,7 @@ def qa(request):
             
         # 4D3N
         else:
+            day_4_2 = None
             if 'Animal' in tag:
                 day_3_1 = 'Langkawi Wildlifre Park'
             elif 'Outdoor' in tag or 'Nature' in tag:
@@ -95,13 +99,13 @@ def qa(request):
         return render(request, "FP/itinerary.html", {
             "tag":tag,
             "days": days,
-            "budget": budget,
             "places": places,
             "day_1_2": day_1_2,
             "day_2_2":day_2_2,
             "day_3_2":day_3_2,
             "day_3_1": day_3_1,
             "day_4_2": day_4_2,
+            "cont":day_2_2_cont,
         })
     else:
         tags = [c[0] for c in Places.OPTIONS]

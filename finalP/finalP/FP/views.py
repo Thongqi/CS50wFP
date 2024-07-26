@@ -51,6 +51,7 @@ def qa(request):
                 day_1_2 = 'Telaga 7 Waterfall'
             else:
                 day_1_2 = 'Crocodile Adventure Land'
+            day_1_2_info = Places.objects.get(name=day_1_2).remarks
         else:
             # If Ferry
             day_1_2 = None
@@ -58,54 +59,108 @@ def qa(request):
         # Day 2
         if 'History' in tag or 'Culture' in tag:
             day_2_2 = 'Kota Mahsuri'
-            x=Places.objects.get(name='Telaga 7 Waterfall')
-            day_2_2_cont = x.remarks
+            day_2_2_info =Places.objects.get(name=day_2_2).remarks
 
         else:
             day_2_2 = None
 
+        # 3D2N
         if days == '3D2N':
-            if day_1_2 != 'Crocodile Adventure Land':
-                day_3_2 =  'Temurun Waterfall'
-            elif 'Animal' in tag:
-                day_3_2 =  'Crocodile Adventure Land'
+            # 3D:flight
+            if transport == 'Flight':
+                day_3_1 = 'Sandy Skulls Beach'
+                if day_1_2 != 'Crocodile Adventure Land':
+                    day_3_2 =  'Temurun Waterfall'
+                elif 'Animal' in tag:
+                    day_3_2 =  'Crocodile Adventure Land'
+                else:
+                    day_3_2 = None
+            # 3D:ferry
             else:
-                day_3_2 = None
-            day_3_1 = None
+                if 'Animal' in tag:
+                    day_3_1 = 'Langkawi Wildlife Park'
+                else:
+                    day_3_1 = 'Kilim Geoforest Park'
+                day_3_2 = 'Teow Soon Huat Duty Free Sdn. Bhd.'
+                
+            day_3_1_info = Places.objects.get(name=day_3_1).remarks
+            day_3_2_info = Places.objects.get(name=day_3_2).remarks
+            
+            day_3_3 = None
+            day_4_1 = None
             day_4_2 = None
             
         # 4D3N
         else:
-            day_4_2 = None
-            if 'Animal' in tag:
-                day_3_1 = 'Langkawi Wildlifre Park'
-            elif 'Outdoor' in tag or 'Nature' in tag:
-                day_3_1 = 'Temurun Waterfall'
-            else:
-                day_3_1 = 'Kilim Geoforest Park'
-                
-            if 'Outdoor' in tag or 'Nature' in tag:
-                day_3_2 = 'Kilim Geoforest Park'
-            elif 'Adventure' in tag or 'Sporty' in tag:
-                day_3_2 = 'SKYTREX Adventure'
-            else:
-                if day_3_1 == 'Kilim Geoforest Park':
-                    day_3_2 = None
-                else:
-                    day_3_2 = 'Kilim Geoforest Park'
+            # 4D:Flight
+            if transport == 'Flight': 
                 day_4_2 = None
-            
+                if 'Animal' in tag:
+                    day_3_1 = 'Langkawi Wildlife Park'
+                elif 'Outdoor' in tag or 'Nature' in tag:
+                    day_3_1 = 'Temurun Waterfall'
+                else:
+                    day_3_1 = 'Kilim Geoforest Park'
+
+                if 'Outdoor' in tag or 'Nature' in tag:
+                    day_3_2 = 'Kilim Geoforest Park'
+                elif 'Adventure' in tag or 'Sporty' in tag:
+                    day_3_2 = 'SKYTREX Adventure'
+
+                else:
+                    if day_3_1 == 'Kilim Geoforest Park':
+                        day_3_2 = None
+                    else:
+                        day_3_2 = 'Kilim Geoforest Park'
+                    day_4_2 = None
+                day_3_3 = 'Teow Soon Huat Duty Free Sdn. Bhd.'
+                day_4_1 = 'Sandy Skulls Beach'
+            # 4D:Ferry
+            else:
+                if 'Outdoor' in tag or 'Nature' in tag:
+                    day_3_1 = 'Telaga 7 Waterfall'
+                elif 'Animal' in tag:
+                    day_3_1 = 'Kilim Geoforest Park'
+                else:
+                    day_3_1 = 'Sandy Skulls Beach'
+                    day_3_2 = 'Crocodile Adventure Land'
+                day_3_3 = None
+                if 'Adventure' in tag or 'Sporty' in tag:
+                    day_3_2 = 'SKYTREX Adventure'
+                else:
+                    day_3_2 = 'Temurun Waterfall'
+                    day_3_3 = 'Sandy Skulls Beach'
+                # ferry:day4
+                if 'Animal' in tag:
+                    day_4_1 = 'Langkawi Wildlife Park'
+                else:
+                    day_4_1 = 'Kilim Geoforest Park'
+                day_4_2 = 'Teow Soon Huat Duty Free Sdn. Bhd.'
+                day_4_2_info =Places.objects.get(name=day_4_2).remarks
+                    
+            day_3_1_info =Places.objects.get(name=day_3_1).remarks
+            day_3_2_info =Places.objects.get(name=day_3_2).remarks
+            day_3_3_info =Places.objects.get(name=day_3_3).remarks
+            day_4_1_info =Places.objects.get(name=day_3_1).remarks
 
         return render(request, "FP/itinerary.html", {
             "tag":tag,
             "days": days,
             "places": places,
             "day_1_2": day_1_2,
+            "day_1_2_info":day_1_2_info,
             "day_2_2":day_2_2,
-            "day_3_2":day_3_2,
+            "day_2_2_info":day_2_2_info,
             "day_3_1": day_3_1,
+            "day_3_1_info":day_3_1_info,
+            "day_3_2":day_3_2,
+            "day_3_2_info":day_3_2_info,            
+            "day_3_3":day_3_3,
+            "day_3_3_info":day_3_3_info,
+            "day_4_1": day_4_1,
+            "day_4_1_info":day_4_1_info,
             "day_4_2": day_4_2,
-            "cont":day_2_2_cont,
+            "day_4_2_info":day_4_2_info,
         })
     else:
         tags = [c[0] for c in Places.OPTIONS]

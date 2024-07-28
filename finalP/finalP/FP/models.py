@@ -68,6 +68,7 @@ class Places(models.Model):
     operating = MultiSelectField(choices = DAYS, max_length=100, blank = True)
     state = models.ForeignKey(States, on_delete=models.CASCADE, null=True)
     remarks = models.TextField(null=True)
+    img = models.TextField(null=True)
 
     def __str__(self):
         return self.name

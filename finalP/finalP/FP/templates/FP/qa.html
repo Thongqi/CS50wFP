@@ -26,18 +26,32 @@
             <input id="select_days" name="select_days" type="hidden"></input>
             <div class="d-flex"> 
                 <span>Recommended:</span>
-                <button type="button" class="btn select_days">3D2N</button>
-                <button type="button" class="btn select_days">4D3N</button>
+                <button type="button" class="btn select_days chkbox">3D2N</button>
+                <button type="button" class="btn select_days chkbox">4D3N</button>
             </div>
         </div>
 
         <div class="tab">
             <h2 style="font-family: Brush Script MT, Brush Script Std, cursive; text-align: center;">How will you travel to Langkawi?</h2>
-            <input name="transport" type="hidden"></input>
-            <div class="row"> 
-                <button type="button" class="btn">Ferry</button>
-                <button type="button" class="btn">Flight</button>
-                <button type="button" class="btn">Not sure yet</button>
+            <div class="row">
+                <div class="chkbox">
+                    <label>
+                        <input type="radio" name="transport" class="btn chkbox hidden" value="Ferry" autocomplete="off">
+                        <span>Ferry</span>
+                    </label>
+                </div>
+                <div class="chkbox">
+                    <label>
+                        <input type="radio" name="transport" class="btn chkbox hidden" value="Flight" autocomplete="off">
+                        <span>Flight</span>
+                    </label>
+                </div>
+                <div class="chkbox">
+                    <label>
+                        <input type="radio" name="transport" class="btn chkbox hidden" value="NA" autocomplete="off">
+                        <span>Not sure yet</span>
+                    </label>
+                </div>
             </div>
         </div>
         

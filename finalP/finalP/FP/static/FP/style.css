@@ -62,7 +62,7 @@ body{
     color: #fff !important;
 }
 
-.chkbox:hover span{
+.chkbox:hover span, .btn:hover {
     background-color:#01B9C5;
     color:white;
     cursor: pointer;
@@ -98,7 +98,7 @@ body{
 }
 
 .itinerary {
-    margin:5rem;
+    margin:1rem 5rem 5rem 2rem;
 }
 
 .iti_1 {
@@ -111,40 +111,73 @@ body{
     padding-bottom:1rem;
 }
 
-.iti_cont {
-    border-top: 1px solid;
-    display:flex; 
-    padding-top:0.5rem;
+.iti_1 div h5{
+    font-weight: 500;
 }
 
-.iti_info {
-    margin:0 0 0 0.5rem;
+.iti_1 h4{
+    margin-bottom: 1rem;
+    font-weight: 600;
 }
+
+
+.iti_cont {
+    border-top: 2px solid;
+    display:flex; 
+    padding:1.5rem 0;
+    margin:1rem 0;
+}
+.iti_info {
+    margin:0 0 0 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .iti_cont {
+        border-top: 2px solid;
+        display:grid; 
+        padding:1.5rem 0;
+        margin:1rem 0;
+    }
+    .iti_info {
+        margin:1.5rem 0;
+    }
+}
+
 .iti_nav{
-    margin-left:auto; 
-    margin-right:auto; 
-    max-width:103rem; 
+    margin-left: -1.05rem;
+    padding-left: 1rem;
     border-left: 1px solid; 
     position:relative; 
-    padding-left: 0.5rem; 
-    padding-bottom:1rem; 
+    margin-bottom:1rem; 
     position:relative; 
     align-items:center; 
     display:flex;
 }
+.iti_nav div {
+    margin-left: -1rem;
+    padding-left: 1rem;
+    border-left: 1px solid;
+}
 .iti_pic {
-    flex-basis: 360px;
-    border: 1px solid;
+    flex-basis: 410px;
+
     height: 280px;
     flex-grow: 0;
     flex-shrink: 0
+}
+
+.iti_pic img {
+    object-fit: cover;
+    height: 280px;
+    width: 410px;
+    border-radius: 5px;
 }
 
 #navbar-example3 {
       list-style-type: none;
       margin: 0;
       padding: 0;
-      width: 25%;
+      width: 20%;
       background-color: #f1f1f1;
       position: fixed;
       height: 100%;
@@ -332,13 +365,4 @@ body{
     filter: invert(100%);
 }
 
-/* #trn::before{
- 	border-radius: 50%;
-    border: 1px solid;
-    background-color:white;
-    content: "  ";
-    width:25px;
-    height:25px;
-    margin-left:-1rem;
-    margin-right:1rem;
- } */
+

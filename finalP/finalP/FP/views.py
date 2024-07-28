@@ -51,7 +51,7 @@ def qa(request):
                 day_1_2 = 'Telaga 7 Waterfall'
             else:
                 day_1_2 = 'Crocodile Adventure Land'
-            day_1_2_info = Places.objects.get(name=day_1_2).remarks
+            day_1_2_info = Places.objects.get(name=day_1_2)
         else:
             # If Ferry
             day_1_2 = None
@@ -59,11 +59,10 @@ def qa(request):
         # Day 2
         if 'History' in tag or 'Culture' in tag:
             day_2_2 = 'Kota Mahsuri'
-            day_2_2_info =Places.objects.get(name=day_2_2).remarks
 
         else:
             day_2_2 = None
-
+        day_2_2_info =Places.objects.get(name=day_2_2) if day_2_2 else None
         # 3D2N
         if days == '3D2N':
             # 3D:flight
@@ -83,8 +82,8 @@ def qa(request):
                     day_3_1 = 'Kilim Geoforest Park'
                 day_3_2 = 'Teow Soon Huat Duty Free Sdn. Bhd.'
                 
-            day_3_1_info = Places.objects.get(name=day_3_1).remarks
-            day_3_2_info = Places.objects.get(name=day_3_2).remarks
+            day_3_1_info = Places.objects.get(name=day_3_1)
+            day_3_2_info = Places.objects.get(name=day_3_2) if day_3_2 else None
             
             day_3_3 = None
             day_4_1 = None
@@ -109,12 +108,13 @@ def qa(request):
 
                 else:
                     if day_3_1 == 'Kilim Geoforest Park':
-                        day_3_2 = None
+                        day_3_2 = 'Public Gardens Teluk Yu'
                     else:
                         day_3_2 = 'Kilim Geoforest Park'
                     day_4_2 = None
                 day_3_3 = 'Teow Soon Huat Duty Free Sdn. Bhd.'
                 day_4_1 = 'Sandy Skulls Beach'
+
             # 4D:Ferry
             else:
                 if 'Outdoor' in tag or 'Nature' in tag:
@@ -136,13 +136,14 @@ def qa(request):
                 else:
                     day_4_1 = 'Kilim Geoforest Park'
                 day_4_2 = 'Teow Soon Huat Duty Free Sdn. Bhd.'
-                day_4_2_info =Places.objects.get(name=day_4_2).remarks
+                
                     
-            day_3_1_info =Places.objects.get(name=day_3_1).remarks
-            day_3_2_info =Places.objects.get(name=day_3_2).remarks
-            day_3_3_info =Places.objects.get(name=day_3_3).remarks
-            day_4_1_info =Places.objects.get(name=day_3_1).remarks
+            day_3_1_info =Places.objects.get(name=day_3_1)
 
+            day_3_2_info = Places.objects.get(name=day_3_2) if day_3_2 else None
+            day_3_3_info =Places.objects.get(name=day_3_3) if day_3_3 else None
+            day_4_1_info =Places.objects.get(name=day_4_1)
+            day_4_2_info =Places.objects.get(name=day_4_2) if day_4_2 else None
         return render(request, "FP/itinerary.html", {
             "tag":tag,
             "days": days,

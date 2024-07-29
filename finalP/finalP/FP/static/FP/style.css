@@ -34,8 +34,7 @@ body{
 }
 
 .chkbox {
-    display: block;
-    border:1px solid #01B9C5;
+    border:1.5px solid #01B9C5;
     display: flex;
     max-width: 250px;
     border-radius: 6px;
@@ -248,6 +247,18 @@ body{
     padding: 10px 20px;
 }
 
+#m-step {
+    border: 2px solid #007F9B;
+    border-radius: 5px;
+    box-shadow: 5px 5px 20px -10px #66888f;
+}
+
+#m-step + div .btn {
+    background-color:#01B9C5;
+    color:white;
+    cursor: pointer;
+    margin-top: 1rem;
+}
 .step {
     height: 15px;
     width: 15px;
@@ -269,7 +280,18 @@ body{
 
 .tab {
     display: none;
+    margin: 1rem;
   }
+
+.tab > div {
+    padding: 1rem;
+}
+
+.tab h2{
+    font-family: Montserrat, sans-serif; 
+    text-align: center;
+    font-size: 24px;
+}
 
 .tag{
     margin: 4px;
@@ -365,4 +387,8 @@ body{
     filter: invert(100%);
 }
 
-
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}

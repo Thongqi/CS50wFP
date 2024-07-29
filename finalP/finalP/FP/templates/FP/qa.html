@@ -6,7 +6,7 @@
     <form action="" method="post" name="m-step" id="m-step">
         {% csrf_token %}
         <div class="tab">
-            <h2 style="font-family: Brush Script MT, Brush Script Std, cursive; text-align: center;">What do you prefer?</h2>
+            <h2>What do you prefer?</h2>
             
             <div class="d-flex flex-wrap">
                 {% for tag in tags %}
@@ -22,18 +22,28 @@
         </div>
 
         <div class="tab">
-            <h2 style="font-family: Brush Script MT, Brush Script Std, cursive; text-align: center;">How many days you planned to spend?</h2>
+            <h2>How many days you planned to spend?</h2>
             <input id="select_days" name="select_days" type="hidden"></input>
-            <div class="d-flex"> 
+            <div class="d-flex" style="justify-content: space-between;align-items: center;"> 
                 <span>Recommended:</span>
-                <button type="button" class="btn select_days chkbox">3D2N</button>
-                <button type="button" class="btn select_days chkbox">4D3N</button>
+                <div class="chkbox">
+                    <label>
+                        <input type="radio" name="transport" class="btn chkbox hidden" value="Ferry" autocomplete="off">
+                        <span>3D2N</span>
+                    </label>
+                </div>
+                <div class="chkbox">
+                    <label>
+                        <input type="radio" name="transport" class="btn chkbox hidden" value="Ferry" autocomplete="off">
+                        <span>4D3N</span>
+                    </label>
+                </div>
             </div>
         </div>
 
         <div class="tab">
-            <h2 style="font-family: Brush Script MT, Brush Script Std, cursive; text-align: center;">How will you travel to Langkawi?</h2>
-            <div class="row">
+            <h2>How will you travel to Langkawi?</h2>
+            <div class="d-flex" style="justify-content: space-evenly;">
                 <div class="chkbox">
                     <label>
                         <input type="radio" name="transport" class="btn chkbox hidden" value="Ferry" autocomplete="off">
@@ -74,22 +84,24 @@
             </div>
         </div> -->
 
-        <!-- progress button -->
-        <div style="overflow:auto;">
-            <div style="float:right;">
-            <button type="button" id="prevBtn" class="btn" onclick="nextPrev(-1)">Previous</button>
-            <button type="button" id="nextBtn" class="btn" onclick="nextPrev(1)">Next</button>
-            </div>
-        </div>
+
 
         
         <!-- Circles which indicates the steps of the form: -->
-        <div style="text-align:center;margin-top:40px;">
+        <div style="text-align:center;">
             <span class="step"></span>
             <span class="step"></span>
             <span class="step"></span>
         </div>
     </form>
+
+    <!-- progress button -->
+    <div style="overflow:auto;">
+        <div style="float:right;">
+        <button type="button" id="prevBtn" class="btn" onclick="nextPrev(-1)"><i class='fas fa-angle-left'></i></button>
+        <button type="button" id="nextBtn" class="btn" onclick="nextPrev(1)"><i class='fas fa-angle-right'></i></button>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

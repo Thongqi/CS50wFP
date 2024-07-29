@@ -51,10 +51,11 @@ def qa(request):
                 day_1_2 = 'Telaga 7 Waterfall'
             else:
                 day_1_2 = 'Crocodile Adventure Land'
-            day_1_2_info = Places.objects.get(name=day_1_2)
+            
         else:
             # If Ferry
             day_1_2 = None
+        day_1_2_info = Places.objects.get(name=day_1_2) if day_1_2 else None
         
         # Day 2
         if 'History' in tag or 'Culture' in tag:
@@ -63,6 +64,7 @@ def qa(request):
         else:
             day_2_2 = None
         day_2_2_info =Places.objects.get(name=day_2_2) if day_2_2 else None
+        
         # 3D2N
         if days == '3D2N':
             # 3D:flight

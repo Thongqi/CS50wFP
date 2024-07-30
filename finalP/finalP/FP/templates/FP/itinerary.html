@@ -8,7 +8,7 @@
       <nav id="navbar-example3" class="col navbar navbar-light bg-light">
         <nav class="nav nav-pills flex-column">
           <a class="nav-link" href="#day-1">Day 1</a>
-          <nav class="nav nav-pills flex-column">
+          <nav class="nav nav-pills flex-column" sytle="padding-left: 0.5rem;">
             <a class="nav-link ml-3 my-1" href="#day-1-1">Day 1-1</a>
             {% if transport == 'Flight' %}
             <a class="nav-link ml-3 my-1" href="#day-1-2">Day 1-2</a>
@@ -20,14 +20,14 @@
             
           </nav>
           <a class="nav-link" href="#day-2">Day 2</a>
-          <nav class="nav nav-pills flex-column">
+          <nav class="nav nav-pills flex-column" sytle="padding-left: 0.5rem;">
             <a class="nav-link ml-3 my-1" href="#day-2-1">Day 2-1</a>
             <a class="nav-link ml-3 my-1" href="#day-2-2">Day 2-2</a>
             <a class="nav-link ml-3 my-1" href="#day-2-3">Day 2-3</a>
             <a class="nav-link ml-3 my-1" href="#day-2-4">Day 2-4</a>
           </nav>
           <a class="nav-link" href="#day-3">Day 3</a>
-          <nav class="nav nav-pills flex-column">
+          <nav class="nav nav-pills flex-column" sytle="padding-left: 0.5rem;">
             <a class="nav-link ml-3 my-1" href="#day-3-1">Day 3-1</a>
             {% if day_3_2 %}
             <a class="nav-link ml-3 my-1" href="#day-3-2">Day 3-2</a>
@@ -36,7 +36,7 @@
             <a class="nav-link ml-3 my-1" href="#day-2-3">Day 3-3</a>
           </nav>
           <a class="nav-link" href="#day-4">Day 4</a>
-          <nav class="nav nav-pills flex-column">
+          <nav class="nav nav-pills flex-column" sytle="padding-left: 0.5rem;">
             <a class="nav-link ml-3 my-1" href="#day-4-1">Day 4-1</a>
             {% if day_4_2 %}
             <a class="nav-link ml-3 my-1" href="#day-4-2">Day 4-2</a>
@@ -48,21 +48,22 @@
     
 
     <div data-spy="scroll" data-target="#navbar-example3" data-offset="0" class="col-sm-9" style="padding:0; margin:0; margin-left:25%; gap:0;">
-      <div>
-        <h2>Here’s the itinerary designated for you~ </h2>
+      <div class="row justify-content-between">
+        <h2 class="col-md-9" style="background:linear-gradient(to top, #99CEDC 20%, rgb(255,255,255,0) 25%)">Here’s the itinerary designated for you~ </h2>
+        <div class="chkbox col-md-3">Save</div>
       </div>
       <div style="border-radius:2.5rem; border:1px solid; text-align:center; width:5rem;">Start</div>
       <div style="padding-left:3rem;">
         <div class="iti_1">
           <h4  id="day-1">Day 1</h4>
           <div id="day-1-0">
-            <h5>Get Rental Car/Motorbike</h5>
+            <h5> &lsqb;Day 1&rsqb;; Get Rental Car/Motorbike</h5>
             <div class="iti_cont" >
                  <p>Car rental services are available here, with several agencies operating in or near the terminal. To save time, consider booking a car in advance through online platforms and arranging for a pickup or drop-off service at the airport.</p> 
             </div>
           </div>
           <div id="day-1-1">
-            <h5>Skybridge</h5>
+            <h5> &lsqb;Day 1&rsqb;; Skybridge</h5>
             <div class="iti_cont" >
               <div class="iti_pic"><img src="..\..\static\FP\skybridge.jpg"></img></div>
               <div class="iti_info">
@@ -78,7 +79,7 @@
 
           <div style="background-color:#F2F1F8;width:auto; padding-left: 4rem; margin-left: -6rem;;">
             
-            <div class="iti_nav" >
+            <div class="iti_nav" onload="duration(Skybridge, '{{ day_1_2_info.location }}')">
               <span style="  height: 10px;
             width: 10px;
             border: 1px solid;
@@ -90,17 +91,17 @@
           </div>
           {% if day_1_2 %}
           <div id="day-1-2">
-            <h5>{{day_1_2}}</h5>
+            <h5> &lsqb;Day 1&rsqb;; {{day_1_2}}</h5>
             <div class="iti_cont" >
               <div class="iti_pic"><img src="{{ day_1_2_info.img }}"></div>
               <div class="iti_info">
-                 {{ day_1_2_cont.remarks | safe}}
+                 {{ day_1_2_info.remarks | safe}}
               </div>
             </div>
           </div>
           {% endif %}
           <div id="day-1-3">
-            <h5>Kuah Town Night Market</h5>
+            <h5>&lsqb;Day 1&rsqb;; Kuah Town Night Market</h5>
             <div class="iti_cont" >
               <div class="iti_pic"><img src="..\..\static\FP\kuah_town.jpg"></div>
               <div class="iti_info">
@@ -110,7 +111,7 @@
           </div>
           <h4  id="day-2">Day 2</h4>
           <div id="day-2-1">
-            <h5>Island Hopping</h5>
+            <h5>&lsqb;Day 2&rsqb;; Island Hopping</h5>
             <div class="iti_cont" >
               <div class="iti_pic"><img src="..\..\static\FP\hopping.jpg"></div>
               <div class="iti_info">
@@ -126,7 +127,7 @@
           </div>
           {% if day_2_2 %}
           <div id="day-2-2">
-            <h5>{{day_2_2}}</h5>
+            <h5>&lsqb;Day 2&rsqb;; {{day_2_2}}</h5>
             <div class="iti_cont" >
               <div class="iti_pic"><img src="{{ day_2_2_info.img }}"></div>
               <div class="iti_info">
@@ -136,7 +137,7 @@
           </div>
           {% endif %}
           <div id="day-2-3">
-            <h5>Underwater World Langkawi</h5>
+            <h5>&lsqb;Day 2&rsqb;; Underwater World Langkawi</h5>
             <div class="iti_cont" >
               <div class="iti_pic"><img src="..\..\static\FP\underwater.jpg"></div>
               <div class="iti_info">
@@ -158,7 +159,7 @@
             </div>
           </div>
           <div id="day-2-4">
-            <h5>Pantai Cenang</h5>
+            <h5>&lsqb;Day 2&rsqb;; Pantai Cenang</h5>
             <div class="iti_cont" >
               <div class="iti_pic"><img src="..\..\static\FP\cenang.jpg"></div>
               <div class="iti_info">
@@ -174,7 +175,7 @@
           {% if days == '3D2N' %}
           <h4  id="day-3">Day 3</h4>
           <div id="day-3-1">
-            <h5>{{ day_3_1 }}</h5>
+            <h5>&lsqb;Day 3&rsqb;; {{ day_3_1 }}</h5>
             <div class="iti_cont" >
               <div class="iti_pic"><img src="{{ day_3_1_info.img }}"></div>
               <div class="iti_info">
@@ -184,7 +185,7 @@
           </div>
             {% if day_3_2 %}
            <div id="day-3-2">
-            <h5>{{day_3_2}}</h5>
+            <h5>&lsqb;Day 3&rsqb;; {{day_3_2}}</h5>
             <div class="iti_cont" >
               <div class="iti_pic"><img src="{{ day_3_2_info.img }}"></div>
               <div class="iti_info">
@@ -198,7 +199,7 @@
           {% else %}
           <h4  id="day-3">Day 3</h4>
           <div id="day-3-1">
-            <h5>{{day_3_1}}</h5>
+            <h5>&lsqb;Day 3&rsqb;; {{day_3_1}}</h5>
             <div class="iti_cont" >
               <div class="iti_pic"><img src="{{ day_3_1_info.img }}"></div>
               <div class="iti_info">
@@ -208,7 +209,7 @@
           </div>
 
            <div id="day-3-2">
-            <h5>{{day_3_2}}</h5>
+            <h5>&lsqb;Day 3&rsqb;; {{day_3_2}}</h5>
             <div class="iti_cont" >
               <div class="iti_pic"><img src="{{ day_3_2_info.img }}"></div>
               <div class="iti_info">
@@ -218,7 +219,7 @@
            </div>
 
           <div id="day-3-3">
-            <h5>{{day_3_3}}</h5>
+            <h5>&lsqb;Day 3&rsqb;; {{day_3_3}}</h5>
             <div class="iti_cont" >
               <div class="iti_pic"><img src="{{ day_3_3_info.img }}"></div>
               <div class="iti_info">
@@ -231,7 +232,7 @@
           <!-- Day 4 -->
            <h4  id="day-4">Day 4</h4>
           <div id="day-4-1">
-            <h5>{{ day_4_1 }}</h5>
+            <h5>&lsqb;Day 4&rsqb;; {{ day_4_1 }}</h5>
             <div class="iti_cont" >
               <div class="iti_pic"><img src="{{ day_4_1_info.img }}"></div>
               <div class="iti_info">
@@ -241,7 +242,7 @@
           </div>
           {% if day_4_2 %}
            <div id="day-4-2">
-            <h5>{{ day_4_2 }}</h5>
+            <h5>&lsqb;Day 4&rsqb;; {{ day_4_2 }}</h5>
             <div class="iti_cont" >
               <div class="iti_pic"><img src="{{ day_4_2_info.img }}"></div>
               <div class="iti_info">

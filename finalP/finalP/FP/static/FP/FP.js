@@ -36,51 +36,7 @@ $(document).ready(function(){
     
     // to get the DURATION from one place to another by DRIVING
     $("#duration").click(function(event){
-        event.preventDefault()
-        const csrftoken = document.getElementsByName('csrfmiddlewaretoken')[0].value
-        console.log(csrftoken)
-        var from = $("#from").val()
-        console.log(from)
-        var to = $('#to').val()
         
-        fetch('',{
-            headers:{
-                'Content-Type':'application/json',
-                'X-CSRFToken': csrftoken,
-                }, 
-            mode: 'same-origin',
-            method:'POST',
-            body: JSON.stringify({
-                from: from,
-                to: to,
-            })
-        })
-        .then(response=>response.json())
-        .then(data => {
-            console.log(data)
-            var start = data.start.reverse() 
-            var end = data.end.reverse()
-            var coordinate = [start, end]
-            console.log(coordinate)
-            fetch(`https://api.mapbox.com/directions/v5/mapbox/driving/${coordinate.join(';')}?&access_token=pk.eyJ1IjoidGhvbmdxaSIsImEiOiJjbHg3NmJjNmIwcnowMmxzNWxyaHdkazUzIn0.q9LgpaGx-sfDPxHcQICUQQ`,{
-                method:'GET',
-            })
-            .then(response=>response.json())
-            .then(result =>{
-                console.log(result)
-                var duration = result.routes[0].duration
-                if (duration > 3600){
-                    var hour = Math.floor(duration/3600)
-                }
-                else {
-                    hour = '0'
-                }
-                var minutes = Math.floor(duration/60)
-                var seconds = Math.round(duration - minutes*60)
-
-                console.log(hour + 'hr' + minutes + 'min' + seconds + 'sec')
-            })
-        })
 
         var places;
         fetch("places",{
@@ -321,4 +277,51 @@ function search(){
         // console.log(places)
     })
     
+}
+
+function duration(from, to){
+    // event.preventDefault()
+    // const csrftoken = document.getElementsByName('csrfmiddlewaretoken')[0].value
+    // console.log(csrftoken)
+    console.log(from, to)
+    
+    // fetch('',{
+    //     headers:{
+    //         'Content-Type':'application/json',
+    //         'X-CSRFToken': csrftoken,
+    //         }, 
+    //     mode: 'same-origin',
+    //     method:'POST',
+    //     body: JSON.stringify({
+    //         from: from,
+    //         to: to,
+    //     })
+    // })
+    // .then(response=>response.json())
+    // .then(data => {
+    //     console.log(data)
+        var start = from.reverse() 
+        var end = to.reverse()
+        var coordinate = [start, end]
+        console.log(coordinate)
+        fetch(`https://api.mapbox.com/directions/v5/mapbox/driving/${coordinate.join(';')}?&access_token=pk.eyJ1IjoidGhvbmdxaSIsImEiOiJjbHg3NmJjNmIwcnowMmxzNWxyaHdkazUzIn0.q9LgpaGx-sfDPxHcQICUQQ`,{
+            method:'GET',
+        })
+        .then(response=>response.json())
+        .then(result =>{
+            console.log(result)
+            var duration = result.routes[0].duration
+            if (duration > 3600){
+                var hour = Math.floor(duration/3600)
+            }
+            else {
+                hour = '0'
+            }
+            var minutes = Math.floor(duration/60)
+            var seconds = Math.round(duration - minutes*60)
+
+            console.log(hour + 'hr' + minutes + 'min' + seconds + 'sec')
+            $(this).html(`${hour} + 'hr' + ${minutes} + 'min' by car`)
+        })
+    // })
 }

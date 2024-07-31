@@ -4,15 +4,16 @@
 // import { Carousel } from 'bootstrap'
 
 $(document).ready(function(){
-    
+    $('.iti_nav').each(duration)
+
     // multiple step form
     if ($("#m-step")){
         console.log("yes")
         var currentTab = 0
         showTab(currentTab)
 
-        $('.select_days').click(function(){
-            var inner = $(this).html()
+        $("[name='select_days']").click(function(){
+            var inner = $(this).siblings().html()
             console.log(inner)
             $('#select_days').val(inner)
         })
@@ -200,10 +201,10 @@ function validateForm(){
         }
     }
     if (currentTab == '1'){
-          if (!y){
-        valid = false;
-        alert('Select at least one')
-    }
+        if (!y){
+            valid = false;
+            alert('Select at least one')
+        }
     }
   
     return valid
@@ -279,11 +280,12 @@ function search(){
     
 }
 
-function duration(from, to){
+// $.fn.duration = 
+function duration(){
     // event.preventDefault()
     // const csrftoken = document.getElementsByName('csrfmiddlewaretoken')[0].value
     // console.log(csrftoken)
-    console.log(from, to)
+    console.log($(this).data('from'))
     
     // fetch('',{
     //     headers:{
@@ -300,8 +302,8 @@ function duration(from, to){
     // .then(response=>response.json())
     // .then(data => {
     //     console.log(data)
-        var start = from.reverse() 
-        var end = to.reverse()
+        var start = $(this).data('from').substring(1, $(this).data('from').indexOf(')')).split(', ')
+        var end = $(this).data('to').substring(1, $(this).data('to').indexOf(')')).split(', ')
         var coordinate = [start, end]
         console.log(coordinate)
         fetch(`https://api.mapbox.com/directions/v5/mapbox/driving/${coordinate.join(';')}?&access_token=pk.eyJ1IjoidGhvbmdxaSIsImEiOiJjbHg3NmJjNmIwcnowMmxzNWxyaHdkazUzIn0.q9LgpaGx-sfDPxHcQICUQQ`,{
@@ -310,6 +312,7 @@ function duration(from, to){
         .then(response=>response.json())
         .then(result =>{
             console.log(result)
+
             var duration = result.routes[0].duration
             if (duration > 3600){
                 var hour = Math.floor(duration/3600)
@@ -321,7 +324,13 @@ function duration(from, to){
             var seconds = Math.round(duration - minutes*60)
 
             console.log(hour + 'hr' + minutes + 'min' + seconds + 'sec')
-            $(this).html(`${hour} + 'hr' + ${minutes} + 'min' by car`)
+            if (hour == '0'){
+                $(this).append(`${minutes} min by car`)
+            }
+            else {
+                $(this).append(`${hour}hr ${minutes} min by car`)
+            }
+
         })
     // })
 }

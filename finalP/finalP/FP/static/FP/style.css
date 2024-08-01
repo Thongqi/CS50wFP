@@ -152,6 +152,25 @@ body{
     align-items:center; 
     display:flex;
 }
+
+div:has(.iti_nav){
+    background-color:#F2F1F8;
+    width:auto; 
+    padding-left: 4rem; 
+    margin-left: -6rem;
+}
+
+.iti_nav span{
+    height: 10px;
+    width: 10px;
+    border: 1px solid;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left:-1.3rem;
+    margin-right:1rem;
+    background-color: #F2F1F8;
+}
+
 .iti_nav div {
     margin-left: -1rem;
     padding-left: 1rem;

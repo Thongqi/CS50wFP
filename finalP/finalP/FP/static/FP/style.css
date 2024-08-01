@@ -153,7 +153,7 @@ body{
     display:flex;
 }
 
-div:has(.iti_nav){
+.iti_nav_div{
     background-color:#F2F1F8;
     width:auto; 
     padding-left: 4rem; 

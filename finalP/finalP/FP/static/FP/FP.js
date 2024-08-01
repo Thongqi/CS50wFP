@@ -302,8 +302,8 @@ function duration(){
     // .then(response=>response.json())
     // .then(data => {
     //     console.log(data)
-        var start = $(this).data('from').substring(1, $(this).data('from').indexOf(')')).split(', ')
-        var end = $(this).data('to').substring(1, $(this).data('to').indexOf(')')).split(', ')
+        var start = $(this).data('from').substring(1, $(this).data('from').indexOf(')')).split(', ').reverse()
+        var end = $(this).data('to').substring(1, $(this).data('to').indexOf(')')).split(', ').reverse()
         var coordinate = [start, end]
         console.log(coordinate)
         fetch(`https://api.mapbox.com/directions/v5/mapbox/driving/${coordinate.join(';')}?&access_token=pk.eyJ1IjoidGhvbmdxaSIsImEiOiJjbHg3NmJjNmIwcnowMmxzNWxyaHdkazUzIn0.q9LgpaGx-sfDPxHcQICUQQ`,{

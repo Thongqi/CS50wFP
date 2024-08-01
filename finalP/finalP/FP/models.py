@@ -36,7 +36,7 @@ class States(models.Model):
 
 class Places(models.Model):
     name = models.CharField(max_length=50)
-    location = LocationField()
+    location = models.CharField(max_length=100)
 
     OPTIONS = (
         ("Nature", "Nature-Seeker"),

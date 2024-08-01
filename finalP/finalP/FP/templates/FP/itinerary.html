@@ -79,8 +79,8 @@
             </div>
           </div>
 
-          <div>
-            <div class="iti_nav" data-to="{{ day_1_2_info.location }}" data-from="(99.66233111839779, 6.389893788672241)" onload="duration(this);">
+          <div class="iti_nav_div">
+            <div class="iti_nav" data-to="{{ day_1_2_info.location }}" data-from="(6.389893788672241, 99.66233111839779)" onload="duration(this);">
               <span></span>
             </div>
           </div>
@@ -91,15 +91,25 @@
               <div class="iti_pic"><img src="{{ day_1_2_info.img }}"></div>
               <div class="iti_info">
                  {{ day_1_2_info.remarks | safe}}
+                 {{ day_1_2_info.location }}
               </div>
             </div>
           </div>
-          {% endif %}
-          <div>
-            <div class="iti_nav" data-to="(99.85261238773789, 6.3211691916194095)" data-from="{{ day_1_2_info.location }}" onload="duration(this);">
+          <div class="iti_nav_div">
+            
+            <div class="iti_nav" data-to="(6.3211691916194095, 99.85261238773789)" data-from="{{ day_1_2_info.location }}" onload="duration(this);">
               <span></span>
              </div>
           </div>
+          {% else %}
+          <div class="iti_nav_div">
+            
+            <div class="iti_nav" data-to="(6.3211691916194095, 99.85261238773789)" data-from="(6.389893788672241, 99.66233111839779)" onload="duration(this);">
+              <span></span>
+             </div>
+          </div>
+          {% endif %}
+          
           <div id="day-1-3">
             <h5>&lsqb;Day 1&rsqb; Kuah Town Night Market</h5>
             <div class="iti_cont" >
@@ -126,8 +136,8 @@
             </div>
           </div>
           {% if day_2_2 %}
-          <div>
-            <div class="iti_nav" data-to="{{ day_2_2_info.location }}" data-from="{{ day_1_2_info.location }}" onload="duration(this);">
+          <div class="iti_nav_div">
+            <div class="iti_nav" data-to="{{ day_2_2_info.location }}" data-from="(6.262174310164274, 99.7426518688865)" onload="duration(this);">
               <span></span>
              </div>
           </div>
@@ -137,17 +147,18 @@
               <div class="iti_pic"><img src="{{ day_2_2_info.img }}"></div>
               <div class="iti_info">
                   {{ day_2_2_info.remarks | safe }}
+                  {{ day_2_2_info.location }}
               </div>
             </div>
           </div>
-          <div>
-            <div class="iti_nav" data-to="(99.72859646446868, 6.287909057288869)" data-from="{{ day_1_2_info.location }}" onload="duration(this);">
+          <div class="iti_nav_div">
+            <div class="iti_nav" data-to="(6.287909057288869, 99.72859646446868)" data-from="{{ day_2_2_info.location }}" onload="duration(this);">
               <span></span>
              </div>
           </div>
           {% else %}
-          <div>
-            <div class="iti_nav" data-to="(99.72859646446868, 6.287909057288869)" data-from="(6.267882771736697, 99.73496958089444)" {% endif%} onload="duration(this);">
+          <div class="iti_nav_div">
+            <div class="iti_nav" data-to="(6.287909057288869, 99.72859646446868)" data-from="(6.262174310164274, 99.7426518688865)" onload="duration(this);">
               <span></span>
              </div>
           </div>
@@ -174,8 +185,8 @@
               </div>
             </div>
           </div>
-          <div>
-            <div class="iti_nav" data-to="(99.72475234036953, 6.293717602262462)" data-from="(99.72859646446868, 6.287909057288869)" {% endif%} onload="duration(this);">
+          <div class="iti_nav_div">
+            <div class="iti_nav" data-to="(6.293717602262462, 99.72475234036953)" data-from="(6.287909057288869, 99.72859646446868)" onload="duration(this);">
               <span></span>
              </div>
           </div>
@@ -205,8 +216,8 @@
             </div>
           </div>
             {% if day_3_2 %}
-          <div>
-            <div class="iti_nav" data-to="{{ day_3_2_info.location }}" data-from="{{ day_3_1_info.location }}" {% endif%} onload="duration(this);">
+          <div class="iti_nav_div">
+            <div class="iti_nav" data-to="{{ day_3_2_info.location }}" data-from="{{ day_3_1_info.location }}" onload="duration(this);">
               <span></span>
              </div>
           </div>
@@ -234,8 +245,8 @@
             </div>
           </div>
           
-          <div>
-            <div class="iti_nav" data-to="{{ day_3_2_info.location }}" data-from="{{ day_3_1_info.location }}" {% endif%} onload="duration(this);">
+          <div class="iti_nav_div">
+            <div class="iti_nav" data-to="{{ day_3_2_info.location }}" data-from="{{ day_3_1_info.location }}" onload="duration(this);">
               <span></span>
              </div>
           </div>
@@ -250,8 +261,8 @@
             </div>
            </div>
 
-           <div>
-            <div class="iti_nav" data-to="{{ day_3_3_info.location }}" data-from="{{ day_3_2_info.location }}" {% endif%} onload="duration(this);">
+           <div class="iti_nav_div">
+            <div class="iti_nav" data-to="{{ day_3_3_info.location }}" data-from="{{ day_3_2_info.location }}" onload="duration(this);">
               <span></span>
              </div>
           </div>
@@ -279,8 +290,8 @@
             </div>
           </div>
           {% if day_4_2 %}
-           <div>
-            <div class="iti_nav" data-to="{{ day_4_2_info.location }}" data-from="{{ day_4_1_info.location }}" {% endif%} onload="duration(this);">
+           <div class="iti_nav_div">
+            <div class="iti_nav" data-to="{{ day_4_2_info.location }}" data-from="{{ day_4_1_info.location }}" onload="duration(this);">
               <span></span>
              </div>
           </div>

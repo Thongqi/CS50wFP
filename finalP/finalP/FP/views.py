@@ -119,19 +119,22 @@ def qa(request):
 
             # 4D:Ferry
             else:
+                day_3_3 = None
                 if 'Outdoor' in tag or 'Nature' in tag:
                     day_3_1 = 'Telaga 7 Waterfall'
                 elif 'Animal' in tag:
                     day_3_1 = 'Kilim Geoforest Park'
                 else:
                     day_3_1 = 'Sandy Skulls Beach'
-                    day_3_2 = 'Crocodile Adventure Land'
-                day_3_3 = None
+                    
                 if 'Adventure' in tag or 'Sporty' in tag:
                     day_3_2 = 'SKYTREX Adventure'
+                    
+                elif day_3_1 == 'Sandy Skulls Beach':
+                    day_3_2 = 'Crocodile Adventure Land'
                 else:
-                    day_3_2 = 'Temurun Waterfall'
-                    day_3_3 = 'Sandy Skulls Beach'
+                    day_3_2 = 'Sandy Skulls Beach'
+                    
                 # ferry:day4
                 if 'Animal' in tag:
                     day_4_1 = 'Langkawi Wildlife Park'

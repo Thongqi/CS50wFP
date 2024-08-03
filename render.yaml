@@ -1,5 +1,5 @@
 databases:
-  - name: finalPdb
+  - name: mysitedb
     plan: free
     databaseName: mysite
     user: mysite

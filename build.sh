@@ -5,7 +5,6 @@ set -o errexit
 # Modify this line as needed for your package manager (pip, poetry, etc.)
 pip3 install --upgrade pip setuptools wheel && \
 pip3 install torch==2.1.0 torchvision torchaudio && \
-pip3 install cliapp && \
 pip3 install -r requirements.txt
 
 # Convert static asset files

@@ -26,7 +26,7 @@ dbus-python==1.2.18
 detectron2 @ git+https://github.com/facebookresearch/detectron2.git@82a57ce0b70057685962b352535147d9a8118578
 diff-match-patch==20230430
 distro==1.7.0
-distro-info===1.1+ubuntu0.1
+distro-info===1.0 
 dj-database-url==2.2.0
 Django==5.0.3
 django-cors-headers==4.3.1

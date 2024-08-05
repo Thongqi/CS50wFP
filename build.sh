@@ -7,6 +7,8 @@ pip3 install --upgrade pip setuptools wheel && \
 pip3 install torch==2.1.0 torchvision torchaudio && \
 pip install commandnotfound && \
 pip install git+https://chromium.googlesource.com/external/gyp && \
+apt-get download python3-apt && \
+pip install -e git+https://salsa.debian.org/apt-team/python-apt.git#egg=python-apt && \
 pip install --ignore-installed cliapp && \
 pip3 install -r requirements.txt
 

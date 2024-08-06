@@ -8,6 +8,7 @@ pip3 install --upgrade pip setuptools wheel && \
 pip3 install torch==2.1.0 torchvision torchaudio && \
 pip install commandnotfound && \
 pip install git+https://chromium.googlesource.com/external/gyp && \
+apt install libsystemd-dev  && \
 # ./pget build-essential.deb && \
 # install ./build-essential ~/.local/bin/ && \
 pip install --ignore-installed cliapp && \

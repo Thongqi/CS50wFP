@@ -1,3 +1,8 @@
+--index-url https://pypi.python.org/simple/
+
+-e git+https://salsa.debian.org/apt-team/python-apt.git#egg=python-apt
+-e .
+
 absl-py==2.0.0
 antlr4-python3-runtime==4.9.3
 appdirs==1.4.4

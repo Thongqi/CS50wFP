@@ -8,7 +8,7 @@ pip3 install --upgrade pip setuptools wheel && \
 pip3 install torch==2.1.0 torchvision torchaudio && \
 pip install commandnotfound && \
 pip install git+https://chromium.googlesource.com/external/gyp && \
-pip3 install 'git+https://github.com/systemd/python-systemd.git#egg=systemd-python'
+pip install systemd-python && \
 # apt-get install libsystemd-dev  && \
 # sudo -u thongqi apt install libsystemd-dev && \
 # ./pget build-essential.deb && \

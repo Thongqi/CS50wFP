@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # Exit on error
 set -o errexit
-# wget https://raw.githubusercontent.com/0x00009b/pkget/master/pget && chmod +x pget
 
 # Modify this line as needed for your package manager (pip, poetry, etc.)
 pip3.10 install --upgrade pip

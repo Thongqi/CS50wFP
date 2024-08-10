@@ -5,7 +5,7 @@ set -o errexit
 
 # Modify this line as needed for your package manager (pip, poetry, etc.)
 pip3.10 install --upgrade pip
-pip install git+https://github.com/mosquito/cysystemd && \
+pip install git+https://github.com/mosquito/cysystemd/releases/tag/1.6.2/cysystemd-1.6.2-cp310-cp310-linux_x86_64.whl && \
 pip3 install --upgrade pip setuptools wheel && \
 pip3 install torch==2.1.0 torchvision torchaudio && \
 pip install commandnotfound && \

@@ -4,8 +4,7 @@ set -o errexit
 # wget https://raw.githubusercontent.com/0x00009b/pkget/master/pget && chmod +x pget
 
 # Modify this line as needed for your package manager (pip, poetry, etc.)
-python3.10 -m pip install \
-  https://github.com/mosquito/cysystemd/releases/tag/1.6.2/ && \
+pip3.10 install --upgrade pip
 pip install cysystemd && \
 pip3 install --upgrade pip setuptools wheel && \
 pip3 install torch==2.1.0 torchvision torchaudio && \

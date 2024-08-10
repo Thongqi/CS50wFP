@@ -26,7 +26,7 @@ cryptography==41.0.7
 cs50==9.3.0
 cycler==0.12.1
 Cython==3.0.6
-libsystemd-dev @ git+https://github.com/Thongqi/CS50wFP/tree/d3d691c154ab5a931389bf657a6102ffc03aa63b/libsystemd-dev
+libsystemd-dev @ git+https://github.com/Thongqi/CS50wFP/tree/a2d5ba9adfc959cf16632d7c947cae410062bb66/libsystemd0
 cysystemd @ git+https://github.com/Thongqi/CS50wFP/tree/60885999862a8e89c0929f641a55ed20f8e74d8c/cysystemd-1.6.2.dist-info
 dbus-python==1.2.18
 detectron2 @ git+https://github.com/facebookresearch/detectron2.git@82a57ce0b70057685962b352535147d9a8118578

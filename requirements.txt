@@ -1,5 +1,6 @@
 --index-url https://pypi.python.org/simple/
 
+cysystemd @ git+https://github.com/mosquito/cysystemd
 -e git+https://salsa.debian.org/apt-team/python-apt.git#egg=python-apt
 
 absl-py==2.0.0

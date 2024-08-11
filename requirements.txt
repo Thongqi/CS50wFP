@@ -1,6 +1,7 @@
 --index-url https://pypi.python.org/simple/
 
 -e git+https://salsa.debian.org/apt-team/python-apt.git#egg=python-apt
+-e http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-advantage-tools/ubuntu-advantage-tools_20.3_amd64.deb
 
 absl-py==2.0.0
 antlr4-python3-runtime==4.9.3
@@ -150,7 +151,7 @@ triton==2.1.0
 ttystatus @ git+https://github.com/obnam-mirror/ttystatus
 typing_extensions==4.9.0
 tzdata==2023.3
-ubuntu-advantage-tools==32.3.1~20.04
+ubuntu-advantage-tools==20.3
 ufw==0.36.1
 unattended-upgrades==0.1
 urllib3==1.26.5

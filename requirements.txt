@@ -150,7 +150,7 @@ triton==2.1.0
 ttystatus @ git+https://github.com/obnam-mirror/ttystatus
 typing_extensions==4.9.0
 tzdata==2023.3
-ubuntu-advantage-tools==8001
+ubuntu-advantage-tools==32.3.1~20.04
 ufw==0.36.1
 unattended-upgrades==0.1
 urllib3==1.26.5

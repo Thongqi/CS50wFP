@@ -147,7 +147,7 @@ torch==2.1.2
 torchvision==0.16.2
 tqdm==4.66.1
 triton==2.1.0
-ttystatus==0.38
+python-ttystatus==0.38
 typing_extensions==4.9.0
 tzdata==2023.3
 ubuntu-advantage-tools==8001

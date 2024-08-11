@@ -26,7 +26,6 @@ cryptography==41.0.7
 cs50==9.3.0
 cycler==0.12.1
 Cython==3.0.6
-cysystemd @ git+https://github.com/Thongqi/CS50wFP/tree/60885999862a8e89c0929f641a55ed20f8e74d8c/cysystemd-1.6.2.dist-info
 dbus-python==1.2.18
 detectron2 @ git+https://github.com/facebookresearch/detectron2.git@82a57ce0b70057685962b352535147d9a8118578
 diff-match-patch==20230430
@@ -137,7 +136,6 @@ SQLAlchemy==2.0.23
 sqlparse==0.4.4
 submit50==3.1.4
 sympy==1.12
-systemd @ git+https://github.com/Thongqi/CS50wFP/tree/da771f6ed56b21663a6f8f9b8ee7d8a15e8692e9/systemd-0.17.1.dist-info
 tablib==3.5.0
 tabulate==0.9.0
 tensorboard==2.15.1

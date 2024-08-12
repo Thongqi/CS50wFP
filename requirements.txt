@@ -26,7 +26,6 @@ cryptography==41.0.7
 cs50==9.3.0
 cycler==0.12.1
 Cython==3.0.6
-cysystemd @ git+https://github.com/Thongqi/CS50wFP/tree/f202bec437f6e1c3cfabf93f33a1c12e0e312bd6/cysystemd
 dbus-python==1.2.18
 detectron2 @ git+https://github.com/facebookresearch/detectron2.git@82a57ce0b70057685962b352535147d9a8118578
 diff-match-patch==20230430

@@ -152,7 +152,7 @@ ttystatus @ git+https://github.com/obnam-mirror/ttystatus
 typing_extensions==4.9.0
 tzdata==2023.3
 ubuntu-pro-client @ git+https://github.com/canonical/ubuntu-pro-client
-ufw @ git+https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/ufw/0.36-1/ufw_0.36.orig.tar.gz
+ufw @ git+https://launchpad.net/ufw/0.36/0.36.2/+download/ufw-0.36.2.tar.gz
 unattended-upgrades==0.1
 urllib3==1.26.5
 uvicorn==0.30.5

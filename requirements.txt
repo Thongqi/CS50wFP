@@ -152,7 +152,7 @@ ttystatus @ git+https://github.com/obnam-mirror/ttystatus
 typing_extensions==4.9.0
 tzdata==2023.3
 ubuntu-pro-client @ git+https://github.com/canonical/ubuntu-pro-client
-unattended-upgrades==0.1
+unattended-upgrades @ git+https://github.com/mvo5/unattended-upgrades
 urllib3==1.26.5
 uvicorn==0.30.5
 wadllib==1.3.6

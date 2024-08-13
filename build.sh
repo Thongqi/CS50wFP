@@ -14,6 +14,7 @@ pip install git+https://chromium.googlesource.com/external/gyp && \
 # sudo -u thongqi apt install libsystemd-dev && \
 # ./pget build-essential.deb && \
 # install ./build-essential ~/.local/bin/ && \
+pip install distutils-extra-python
 pip install --ignore-installed cliapp && \
 pip3 install -r requirements.txt
 

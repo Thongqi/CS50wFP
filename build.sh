@@ -15,7 +15,7 @@ pip install http://launchpad.net/intltool/trunk/0.50.2/+download/intltool-0.50.2
 # sudo -u thongqi apt install libsystemd-dev && \
 # ./pget build-essential.deb && \
 # install ./build-essential ~/.local/bin/ && \
-pip install distutils-extra-python
+pip install distutils-extra-python && \
 pip install --ignore-installed cliapp && \
 pip3 install -r requirements.txt
 

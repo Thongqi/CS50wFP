@@ -8,7 +8,7 @@ pip3 install --upgrade pip setuptools wheel && \
 pip3 install torch==2.1.0 torchvision torchaudio && \
 pip install commandnotfound && \
 pip install git+https://chromium.googlesource.com/external/gyp && \
-pip install https://tracker.debian.org/pkg/intltool && \
+pip install git+https://anonscm.debian.org/git/pkg-gnome/intltool.git  && \
 # python3.10 -m pip install \ https://github.com/mosquito/cysystemd/releases/tag/1.6.2/cysystemd-1.6.2.tar.gz  && \
 # pip install systemd-python && \
 # apt-get install libsystemd-dev  && \

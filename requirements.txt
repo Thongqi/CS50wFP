@@ -70,7 +70,7 @@ layoutparser==0.3.4
 lazr.restfulclient==0.14.4
 lazr.uri==1.0.6
 lib50==3.0.11
-libsystemd==256.4-3
+libsystemd-dev==256.4-3
 Markdown==3.5.1
 markdown2==2.4.13
 MarkupSafe==2.1.3

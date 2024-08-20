@@ -1,7 +1,7 @@
 --index-url https://pypi.python.org/simple/
 
 
-apt==2.9.8
+apt @ http://deb.debian.org/debian/pool/main/a/apt/apt_2.6.1.tar.xz
 attrs==23.2.0
 Automat==22.10.0
 Babel==2.10.3

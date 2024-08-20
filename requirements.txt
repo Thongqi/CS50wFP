@@ -1,6 +1,6 @@
 --index-url https://pypi.python.org/simple/
 
--e https://deb.debian.org/debian/pool/main/a/apt/apt_2.9.8.dsc
+-e git+https://deb.debian.org/debian/pool/main/a/apt/apt_2.9.8.dsc
 
 attrs==23.2.0
 Automat==22.10.0

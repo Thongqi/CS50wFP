@@ -54,6 +54,7 @@ rich==13.7.1
 service-identity==24.1.0
 setuptools==68.1.2
 six==1.16.0
+libsystemd-journal @ https://hackage.haskell.org/package/libsystemd-journal-1.4.5.1/libsystemd-journal-1.4.5.1.tar.gz
 systemd-python==235
 Twisted==24.3.0
 typing_extensions==4.10.0

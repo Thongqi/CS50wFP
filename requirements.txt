@@ -1,7 +1,7 @@
 --index-url https://pypi.python.org/simple/
 
--e git+https://deb.debian.org/debian/pool/main/a/apt/apt_2.9.8.dsc
 
+apt @ https://deb.debian.org/debian/pool/main/a/apt/apt_2.9.8.dsc
 attrs==23.2.0
 Automat==22.10.0
 Babel==2.10.3

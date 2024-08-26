@@ -10,7 +10,7 @@ services:
     name: finalP
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: "python -m gunicorn finalP.asgi:application -k uvicorn.workers.UvicornWorker"   
+    startCommand: "sh /code/release.sh"   
     envVars:
       - key: DATABASE_URL
         fromDatabase:

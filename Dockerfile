@@ -1,19 +1,21 @@
 FROM python:3.11.4
-	WORKDIR /app
-	
-	ENV PYTHONUNBUFFERED 1
+
+	# Set environment variables
 	ENV PYTHONDONTWRITEBYTECODE 1
-	
-	# install system dependencies
+	ENV PYTHONUNBUFFERED 1
+
+	# Set the working directory
+	WORKDIR /app
+
 	RUN apt-get update && apt-get install -y \
 		build-essential \ 
 		git \
+		gunicorn \
 		python3-dev 
 	# install dependencies
 	RUN pip install --upgrade pip
-	COPY ./requirements.txt /app/
+	COPY ./requirements.txt /finalp/
 	RUN pip install -r requirements.txt
-	
-	COPY . /app
-	
-	ENTRYPOINT [ "gunicorn", "core.wsgi", "-b", "0.0.0.0:8000"]
+
+	# Copy the project code into the container
+	COPY . /app/

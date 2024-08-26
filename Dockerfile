@@ -14,7 +14,7 @@ FROM python:3.11.4
 		python3-dev 
 	# install dependencies
 	RUN pip install --upgrade pip
-	COPY ./requirements.txt /finalp/
+	COPY ./requirements.txt /app/
 	RUN pip install -r requirements.txt
 
 	# Copy the project code into the container

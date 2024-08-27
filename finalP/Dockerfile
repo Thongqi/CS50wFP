@@ -14,10 +14,10 @@ FROM python:3.11.4
 		python3-dev 
 	# install dependencies
 	RUN pip install --upgrade pip
-	COPY ./requirements.txt /app/
+	COPY ./requirements.txt /app
 	RUN pip install -r requirements.txt
 
 	# Copy the project code into the container
-	COPY . /app
+	COPY ./finalp /app
  
  	ENTRYPOINT [ "gunicorn", "finalp.wsgi", "-b", "0.0.0.0:8000"]

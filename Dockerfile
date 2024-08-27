@@ -18,6 +18,6 @@ FROM python:3.11.4
 	RUN pip install -r requirements.txt
 
 	# Copy the project code into the container
-	COPY ./finalp /app/
+	COPY . /app/
  
- 	ENTRYPOINT [ "gunicorn", "finalp.finalp.finalp.wsgi", "-b", "0.0.0.0:8000"]
+ 	ENTRYPOINT [ "gunicorn", "finalp.wsgi", "-b", "0.0.0.0:8000"]

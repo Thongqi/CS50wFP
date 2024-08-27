@@ -20,4 +20,4 @@ FROM python:3.11.4
 	# Copy the project code into the container
 	COPY ./finalp /app
  
- 	ENTRYPOINT [ "gunicorn", "finalp.wsgi", "-b", "0.0.0.0:8000"]
+ 	ENTRYPOINT [ "gunicorn", "finalp.finalp.finalp.wsgi", "-b", "0.0.0.0:8000"]

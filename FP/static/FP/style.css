@@ -10,7 +10,7 @@ body{
 }
 
 .background {
-    width: 1519.2px;
+    width: 100%;
     /* height: auto; */
     opacity: 0.60; 
     object-fit: cover;
@@ -27,8 +27,9 @@ body{
 }
 
 .centered {
+    padding-top: 5rem;
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -82,7 +83,6 @@ body{
     text-align: center;
     color: white;
     width: 100%;
-    height: 700px;
   }
 
 
@@ -140,7 +140,39 @@ body{
     .iti_info {
         margin:1.5rem 0;
     }
+    .openbtn{
+        display: block;
+        background-color: #14558e;
+        color: white;
+    }
+    #navbar-example3{
+        display:none;
+        width: 200px;
+        position: absolute;
+        z-index: 1000;
+    }
+    .itinerary>.row>.col-sm-9{
+        margin:auto;
+        padding:0; 
+        padding-top: 1rem; 
+        gap:0;
+    }
 }
+@media (min-width: 768px){
+    #openbtn{
+        display: none;
+    }
+    #navbar-example3{
+        display:block;
+    }
+    .itinerary>.row>.col-sm-9{
+        margin-left:25%;
+        padding:0; 
+        padding-top: 1rem; 
+    }
+
+}
+
 
 .iti_nav{
     margin-left: -1.05rem;

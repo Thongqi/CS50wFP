@@ -119,8 +119,42 @@ $(document).ready(function(){
         })
     
     }
+
+    // if viewport <768px, show navbar, else hide
+
+    
+    $(window).resize(function(){
+        var width = $(window).width()
+        if (width > '768'){
+            if('.itinerary'){
+                console.log(width)
+                $('#navbar-example3').show()
+            }
+        }
+        else {
+            
+            if('.itinerary'){
+                console.log(width)
+                $('#navbar-example3').hide()
+            }
+        }
+    })
+
+
+
+    if('#openbtn'){
+        console.log('openbtn')
+        $('#openbtn').click(openSideNav)
+    }
+
     
 })
+
+function openSideNav(){
+    $('#navbar-example3').toggle("slow")
+
+}
+
 function getUnique(arrayNum, count) {
   // Make a copy of the array
   var tmp = arrayNum.slice(arrayNum);

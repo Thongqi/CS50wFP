@@ -9,8 +9,6 @@ services:
     plan: free
     name: finalP
     runtime: python
-    buildCommand: "./build.sh"
-    startCommand: "sh /code/release.sh"   
     envVars:
       - key: DATABASE_URL
         fromDatabase:

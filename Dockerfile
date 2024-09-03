@@ -28,6 +28,7 @@ FROM python:3.11.4
 
 	# Copy the project code into the container
 	COPY . /app
+	RUN python manage.py makemigrations
  	RUN python manage.py migrate
   
  	ENTRYPOINT [ "gunicorn", "finalP.wsgi", "-b", "0.0.0.0:8000"]

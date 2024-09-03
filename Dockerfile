@@ -18,6 +18,7 @@ FROM python:3.11.4
 	# install dependencies
  	
 	RUN pip install --upgrade pip
+ 	COPY ./db.sqlite3 /app
  	RUN pgloader ./db.sqlite3 postgresql://finalp_user:vrVlqog32vqbwsJznxvPJfVWol6ALFdZ@dpg-crb7k33tq21c73cg3lng-a/finalp
 	COPY ./requirements.txt /app
  	COPY ./manage.py /app

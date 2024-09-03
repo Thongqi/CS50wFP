@@ -20,10 +20,11 @@ FROM python:3.11.4
 	COPY ./requirements.txt /app
  	COPY ./manage.py /app
 	RUN pip install -r requirements.txt
-	RUN python manage.py migrate
+	
 
 
 	# Copy the project code into the container
 	COPY . /app
- 
+ 	RUN python manage.py migrate
+  
  	ENTRYPOINT [ "gunicorn", "finalP.wsgi", "-b", "0.0.0.0:8000"]

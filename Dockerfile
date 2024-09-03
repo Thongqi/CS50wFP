@@ -11,7 +11,8 @@ FROM python:3.11.4
 		build-essential \ 
 		git \
 		gunicorn \
-		python3-dev 
+		python3-dev \
+  		command-not-found
 	# install dependencies
 	RUN pip install --upgrade pip
 	COPY ./requirements.txt /app

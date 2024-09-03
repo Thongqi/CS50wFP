@@ -84,19 +84,19 @@ WSGI_APPLICATION = 'finalP.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-DATABASE_URL = os.environ.get('DATABASE_URL')
-DATABASES = {
-    'default': dj_database_url.config(),
-}
+# DATABASE_URL = os.environ.get('DATABASE_URL')
 # DATABASES = {
-#         # 'default': dj_database_url.config(        # Replace this value with your local database's connection string.        
-#         #     default='postgresql://postgres:postgres@localhost:5432/mysite', 
-#         #     # conn_max_age=600
+#     'default': dj_database_url.config(),
+# }
+DATABASES = {
+        'default': dj_database_url.config(        # Replace this value with your local database's connection string.        
+            default='postgresql://finalp_user:vrVlqog32vqbwsJznxvPJfVWol6ALFdZ@dpg-crb7k33tq21c73cg3lng-a/finalp', 
+            conn_max_age=600
 #         #     conn_max_age=600,
 #         #     conn_health_checks=True,
-#         # )
+        )
 #     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'), conn_max_age=600)
-# }
+}
 
 
 # Password validation

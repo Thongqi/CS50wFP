@@ -42,7 +42,7 @@ def qa(request):
         days = request.POST.get('select_days')
         transport = request.POST.get('transport')
 
-        places = list(Places.objects.values("name"))
+        places = list(fp_places.objects.values("name"))
   
         # If flight or ferry
         if transport == 'Flight':

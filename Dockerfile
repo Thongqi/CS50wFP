@@ -14,10 +14,11 @@ FROM python:3.11.4
 		python3-dev \
   		command-not-found
 	# install dependencies
+ 	RUN python ./manage.py migrate
 	RUN pip install --upgrade pip
 	COPY ./requirements.txt /app
 	RUN pip install -r requirements.txt
- 	RUN python manage.py migrate
+
 
 	# Copy the project code into the container
 	COPY . /app

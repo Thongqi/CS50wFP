@@ -9,13 +9,6 @@ from .models import Places, States
 import json
 import psycopg2
 
-# postgres
-conn = psycopg2.connect(database = "finalp", 
-                        user = "finalp_user", 
-                        host= 'dpg-crb7k33tq21c73cg3lng-a',
-                        password = "vrVlqog32vqbwsJznxvPJfVWol6ALFdZ",
-                        port = 5432)
-cursor = conn.cursor()
 
 # Create your views here.
 @api_view(['GET'])
@@ -46,6 +39,14 @@ def places(request):
 
 
 def qa(request):
+  # postgres
+    conn = psycopg2.connect(database = "finalp", 
+                            user = "finalp_user", 
+                            host= 'dpg-crb7k33tq21c73cg3lng-a',
+                            password = "vrVlqog32vqbwsJznxvPJfVWol6ALFdZ",
+                            port = 5432)
+    cursor = conn.cursor()
+
     if request.method == 'POST':
         tag = request.POST.getlist('chk[]')
         days = request.POST.get('select_days')
@@ -173,11 +174,16 @@ def qa(request):
             "day_3_2":day_3_2,
             "day_3_2_info":day_3_2_info,            
             "day_3_3":day_3_3,
-            "day_3_3_info":day_3_3_info,
-            "day_4_1": day_4_1,
-            "day_4_1_info":day_4_1_info,
-            "day_4_2": day_4_2,
-            "day_4_2_info":day_4_2_info,
+            # "day_3_3_info":day_3_3_info,
+          "day_3_3_info":None,
+            # "day_4_1": day_4_1,
+            # "day_4_1_info":day_4_1_info,
+          "day_4_1": None,
+          "day_4_1_info":None,
+          "day_4_2": None,
+            "day_4_2_info":None,
+            # "day_4_2": day_4_2,
+            # "day_4_2_info":day_4_2_info,
         })
     else:
         tags = [c[0] for c in Places.OPTIONS]

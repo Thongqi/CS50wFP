@@ -95,10 +95,10 @@ def qa(request):
                     day_3_1 = 'Kilim Geoforest Park'
                 day_3_2 = 'Teow Soon Huat Duty Free Sdn. Bhd.'
                 
-            # day_3_1_info = Places.objects.get(name=day_3_1)
-            day_3_1_info = cursor.execute("SELECT * from fp_places WHERE name = %s",[day_3_1])
-            # day_3_2_info = Places.objects.get(name=day_3_2) if day_3_2 else None
-            day_3_2_info = cursor.execute("SELECT * from fp_places WHERE name = %s",[day_3_2])
+            day_3_1_info = Places.objects.get(name=day_3_1)
+            # day_3_1_info = cursor.execute("SELECT * from fp_places WHERE name = %s",[day_3_1])
+            day_3_2_info = Places.objects.get(name=day_3_2) if day_3_2 else None
+            # day_3_2_info = cursor.execute("SELECT * from fp_places WHERE name = %s",[day_3_2])
             day_3_3 = None
             day_4_1 = None
             day_4_2 = None

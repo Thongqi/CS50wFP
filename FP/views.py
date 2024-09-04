@@ -7,6 +7,15 @@ from rest_framework.response import Response
 from .models import Places, States
 
 import json
+import psycopg2
+
+# postgres
+conn = psycopg2.connect(database = "finalp", 
+                        user = "finalp_user", 
+                        host= 'dpg-crb7k33tq21c73cg3lng-a',
+                        password = "vrVlqog32vqbwsJznxvPJfVWol6ALFdZ",
+                        port = 5432)
+cursor = conn.cursor()
 
 # Create your views here.
 @api_view(['GET'])
@@ -42,7 +51,8 @@ def qa(request):
         days = request.POST.get('select_days')
         transport = request.POST.get('transport')
 
-        places = list(fp_places.objects.values("name"))
+        # places = list(fp_places.objects.values("name"))
+        places = cursor.execute("SELECT * FROM fp_places")
   
         # If flight or ferry
         if transport == 'Flight':
